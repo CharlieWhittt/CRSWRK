@@ -1,0 +1,79 @@
+﻿body {
+    background-color: #121212;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+html,body {
+    height: 100%;
+    min-height: 100%;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 100%;
+    min-height: 100%;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Additional CSS */
+
+.crew-navbar {
+    background-color: black;
+    border-color: black;
+}
+
+.crew-navbar a {
+    color: #eeeeee;
+}
+
+.crew-navbar li a:hover {
+    background-color: black;
+    color: #eeeeee;
+} 
+
+.crew-footer {
+    background-color: black;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.crew-footer p {
+    text-align: center;
+    width: 100%;
+    color: #eeeeee;
+}
+
+.crew-jumbotron-container {
+    background-color: #1e1e1e;
+    min-height: 100%;
+    margin-bottom: 0;
+    padding: 30px 30px 30px 30px!important;
+
+}
+
+.crew-jumbotron-container h1,h2,h3,h4,h5,h6 {
+    color: #eeeeee;
+    margin: 0;
+}
+
+.crew-jumbotron-container p {
+    color: #eeeeee;
+}
