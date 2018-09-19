@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DefensiveBack" Class="DingerDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=&quot;(LocalDb)\Baseball Database&quot;;Initial Catalog=DefensiveBack;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DefensiveBackConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=barrythedatabase.database.windows.net;Initial Catalog=DefensiveBack;Persist Security Info=True;User ID=charlie" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DefensiveBackConnectionString1" Provider="System.Data.SqlClient" />
   <Function Name="dbo.getPlayersWithTeam" Method="getPlayersWithTeam">
     <ElementType Name="getPlayersWithTeamResult">
       <Column Name="PlayerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />

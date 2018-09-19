@@ -33,7 +33,7 @@ namespace bootstrap.Models
     #endregion
 		
 		public DingerDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DefensiveBackConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DefensiveBackConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
