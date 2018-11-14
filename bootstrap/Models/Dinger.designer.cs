@@ -68,6 +68,20 @@ namespace bootstrap.Models
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<getPlayersWithTeamResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LoginCheck")]
+		public ISingleResult<LoginCheckResult> LoginCheck([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Login", DbType="VarChar(20)")] string login, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string password)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), login, password);
+			return ((ISingleResult<LoginCheckResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ShowTeamList")]
+		public ISingleResult<ShowTeamListResult> ShowTeamList()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<ShowTeamListResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class getPlayersWithTeamResult
@@ -131,6 +145,58 @@ namespace bootstrap.Models
 					this._TeamID = value;
 				}
 			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TeamName", DbType="NVarChar(256)")]
+		public string TeamName
+		{
+			get
+			{
+				return this._TeamName;
+			}
+			set
+			{
+				if ((this._TeamName != value))
+				{
+					this._TeamName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class LoginCheckResult
+	{
+		
+		private System.Nullable<bool> _LoginSuccess;
+		
+		public LoginCheckResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoginSuccess", DbType="Bit")]
+		public System.Nullable<bool> LoginSuccess
+		{
+			get
+			{
+				return this._LoginSuccess;
+			}
+			set
+			{
+				if ((this._LoginSuccess != value))
+				{
+					this._LoginSuccess = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ShowTeamListResult
+	{
+		
+		private string _TeamName;
+		
+		public ShowTeamListResult()
+		{
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TeamName", DbType="NVarChar(256)")]

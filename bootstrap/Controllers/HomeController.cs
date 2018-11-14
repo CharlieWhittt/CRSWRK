@@ -23,6 +23,19 @@ namespace bootstrap.Controllers
             return View(Model);
         }
 
+        public ActionResult TeamFinder()
+        {
+            DingerDataContext Db = new DingerDataContext();
+
+            TeamFinderModels Model = new TeamFinderModels();
+
+            Model.PT = new List<ShowTeamListResult>();
+
+            Model.PT = Db.ShowTeamList().ToList();
+
+            return View(Model);
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

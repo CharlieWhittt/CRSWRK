@@ -21,7 +21,7 @@ namespace bootstrap.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DefensiveBackConnectionString1", throwIfV1Schema: false)
         {
         }
 
