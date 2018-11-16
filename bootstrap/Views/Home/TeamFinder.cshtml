@@ -1,7 +1,7 @@
 ﻿@model bootstrap.Models.TeamFinderModels
 
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Team Finder Page";
 }
 
 <div class="jumbotron crew-jumbotron-container">
@@ -11,7 +11,7 @@
             <tr>
                 
                 <th>
-                    Team Name
+                    Team
                 </th>
                 
                 
@@ -21,7 +21,7 @@
                 {
                     <tr>
                         <td>
-                            @Html.ActionLink(item.TeamName,"Team","Manage", new { id = item.TeamName},null)
+                            @Html.ActionLink(item.TeamName,"Team","Manage", new { id = item.TeamID},null)
                         </td>
                        
                     </tr>

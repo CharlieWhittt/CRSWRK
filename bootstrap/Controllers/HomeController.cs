@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using bootstrap.Models;
+using System.Threading.Tasks;
 
 namespace bootstrap.Controllers
 {
@@ -29,18 +30,45 @@ namespace bootstrap.Controllers
 
             TeamFinderModels Model = new TeamFinderModels();
 
-            Model.PT = new List<ShowTeamListResult>();
+            Model.TF = new List<ShowTeamListResult>();
 
-            Model.PT = Db.ShowTeamList().ToList();
+            Model.TF = Db.ShowTeamList().ToList();
 
             return View(Model);
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            DingerDataContext Db = new DingerDataContext();
 
-            return View();
+            PlayerSeachViewModel Model = new PlayerSeachViewModel();
+
+            Model.SC = new List<PlayerSearchResult>();
+
+            Model.SearchCriteria = "";
+
+            Model.SC = Db.PlayerSearch(Model.SearchCriteria).ToList();
+
+            return View(Model);
+        }
+        [HttpPost]
+        
+        [ValidateAntiForgeryToken]
+        public ActionResult About(PlayerSeachViewModel model)
+        {
+            DingerDataContext Db = new DingerDataContext();
+
+            if (ModelState.IsValid)
+            {
+                if (model.SearchCriteria == null)
+                {
+                    model.SearchCriteria = "";
+                }
+                model.SC = Db.PlayerSearch(model.SearchCriteria).ToList();
+            }
+
+            
+            return View(model);
         }
 
         public ActionResult Contact()

@@ -12,10 +12,16 @@ namespace bootstrap.Models
 
 
     }
-    public class TeamFinderModel
+    public class TeamFinderModels
     {
-        public List<ShowTeamListResult> PT { get; set; }
+        public List<ShowTeamListResult> TF { get; set; }
 
 
+    }
+    public class PlayerSeachViewModel
+    {
+        public string SearchCriteria { get; set; }
+
+        public List<PlayerSearchResult> SC { get; set; }
     }
 }

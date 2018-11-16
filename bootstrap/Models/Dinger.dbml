@@ -17,7 +17,20 @@
   </Function>
   <Function Name="dbo.ShowTeamList" Method="ShowTeamList">
     <ElementType Name="ShowTeamListResult">
+      <Column Name="TeamID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TeamName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.PlayerSearch" Method="PlayerSearch">
+    <Parameter Name="PlayerName" Parameter="playerName" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="PlayerSearchResult">
+      <Column Name="PlayerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TeamID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TeamName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="PositionAbbr" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="PositionName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

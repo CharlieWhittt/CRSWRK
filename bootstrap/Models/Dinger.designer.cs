@@ -82,6 +82,13 @@ namespace bootstrap.Models
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<ShowTeamListResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.PlayerSearch")]
+		public ISingleResult<PlayerSearchResult> PlayerSearch([global::System.Data.Linq.Mapping.ParameterAttribute(Name="PlayerName", DbType="VarChar(50)")] string playerName)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), playerName);
+			return ((ISingleResult<PlayerSearchResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class getPlayersWithTeamResult
@@ -193,10 +200,28 @@ namespace bootstrap.Models
 	public partial class ShowTeamListResult
 	{
 		
+		private int _TeamID;
+		
 		private string _TeamName;
 		
 		public ShowTeamListResult()
 		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TeamID", DbType="Int NOT NULL")]
+		public int TeamID
+		{
+			get
+			{
+				return this._TeamID;
+			}
+			set
+			{
+				if ((this._TeamID != value))
+				{
+					this._TeamID = value;
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TeamName", DbType="NVarChar(256)")]
@@ -211,6 +236,140 @@ namespace bootstrap.Models
 				if ((this._TeamName != value))
 				{
 					this._TeamName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class PlayerSearchResult
+	{
+		
+		private int _PlayerID;
+		
+		private int _TeamID;
+		
+		private string _Name;
+		
+		private System.Nullable<int> _Age;
+		
+		private string _TeamName;
+		
+		private string _PositionAbbr;
+		
+		private string _PositionName;
+		
+		public PlayerSearchResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlayerID", DbType="Int NOT NULL")]
+		public int PlayerID
+		{
+			get
+			{
+				return this._PlayerID;
+			}
+			set
+			{
+				if ((this._PlayerID != value))
+				{
+					this._PlayerID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TeamID", DbType="Int NOT NULL")]
+		public int TeamID
+		{
+			get
+			{
+				return this._TeamID;
+			}
+			set
+			{
+				if ((this._TeamID != value))
+				{
+					this._TeamID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(256)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Age", DbType="Int")]
+		public System.Nullable<int> Age
+		{
+			get
+			{
+				return this._Age;
+			}
+			set
+			{
+				if ((this._Age != value))
+				{
+					this._Age = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TeamName", DbType="NVarChar(256)")]
+		public string TeamName
+		{
+			get
+			{
+				return this._TeamName;
+			}
+			set
+			{
+				if ((this._TeamName != value))
+				{
+					this._TeamName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionAbbr", DbType="NVarChar(2)")]
+		public string PositionAbbr
+		{
+			get
+			{
+				return this._PositionAbbr;
+			}
+			set
+			{
+				if ((this._PositionAbbr != value))
+				{
+					this._PositionAbbr = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionName", DbType="NVarChar(20)")]
+		public string PositionName
+		{
+			get
+			{
+				return this._PositionName;
+			}
+			set
+			{
+				if ((this._PositionName != value))
+				{
+					this._PositionName = value;
 				}
 			}
 		}
