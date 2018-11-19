@@ -33,4 +33,53 @@
       <Column Name="PositionName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.BattingCalculations" Method="BattingCalculations">
+    <Parameter Name="PlayerID" Parameter="playerID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="BattingCalculationsResult">
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="G" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="H" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RBI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AVG" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
+      <Column Name="OBP" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
+      <Column Name="SLG" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
+      <Column Name="OPS" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
+      <Column Name="ISO" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
+      <Column Name="BABIP" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
+      <Column Name="[K%]" Member="K_" Type="System.Decimal" DbType="Decimal(10,1)" CanBeNull="true" />
+      <Column Name="[BB%]" Member="BB_" Type="System.Decimal" DbType="Decimal(10,1)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.PitchingCalculations" Method="PitchingCalculations">
+    <Parameter Name="PlayerID" Parameter="playerID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="PitchingCalculationsResult">
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="G" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="W" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="L" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ERA" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="WHIP" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="AVG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[K/9]" Member="K_9" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="[BB/9]" Member="BB_9" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="[K/BB]" Member="K_BB" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="[K%]" Member="K_" Type="System.Decimal" DbType="Decimal(10,1)" CanBeNull="true" />
+      <Column Name="[BB%]" Member="BB_" Type="System.Decimal" DbType="Decimal(10,1)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.BasicInfo" Method="BasicInfo">
+    <Parameter Name="PlayerID" Parameter="playerID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="BasicInfoResult">
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TeamName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="PositionAbbr" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="PositionName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

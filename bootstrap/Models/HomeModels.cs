@@ -24,4 +24,13 @@ namespace bootstrap.Models
 
         public List<PlayerSearchResult> SC { get; set; }
     }
+    public class PlayerPageViewModel
+    {
+        public string PlayerID { get; set; }
+
+        public List<BasicInfoResult> PP { get; set; }
+
+        public List<BattingCalculationsResult> BC { get; set; }
+        public List<PitchingCalculationsResult> PC { get; set; }
+    }
 }

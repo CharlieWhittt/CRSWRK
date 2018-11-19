@@ -2,6 +2,7 @@
     background-color: #121212;
     padding-top: 50px;
     padding-bottom: 20px;
+    color:white
 }
 
 html,body {
@@ -70,10 +71,10 @@ textarea {
 }
 
 .crew-jumbotron-container h1,h2,h3,h4,h5,h6 {
-    color: #eeeeee;
+    color: white;
     margin: 0;
 }
 
 .crew-jumbotron-container p {
-    color: #eeeeee;
+    color: white;
 }

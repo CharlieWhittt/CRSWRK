@@ -77,5 +77,18 @@ namespace bootstrap.Controllers
 
             return View();
         }
+        public ActionResult PlayerPage(int PlayerID)
+        {
+            DingerDataContext Db = new DingerDataContext();
+
+            PlayerPageViewModel Model = new PlayerPageViewModel();
+
+            Model.PP = new List<BasicInfoResult>();
+
+
+            Model.PP = Db.BasicInfo(PlayerID).ToList();
+
+            return View(Model);
+        }
     }
 }
