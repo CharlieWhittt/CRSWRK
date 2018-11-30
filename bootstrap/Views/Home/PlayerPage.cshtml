@@ -7,30 +7,42 @@
 <div class="jumbotron crew-jumbotron-container">
     <h2>Baseball stats</h2>
     <div>
-        <table>
-            <tr>
-                
-                <th>
-                    Team
-                </th>
-                
-                
-            </tr>
-            @{ 
-
-                    <tr>
-                        <td>
-                            
-                            Age: @foreach (var item in Model.PP)
-                            {
-                               @item.Age.ToString();
-                            }
-                           
-                        </td>
-                    </tr>
-                
+       
+            
+                <h1> @foreach (var item in Model.PP)
+                {
+                    @item.Name.ToString();
+                } 
+        </h1>
+        <h1>
+            @foreach (var item in Model.PP)
+            {
+                @item.PositionAbbr.ToString();
             }
-        </table>
+        </h1>
+
+        <h4>(@foreach (var item in Model.PP)
+            {
+                @item.PositionName.ToString();
+            })</h4>
+        <p>
+            <br />
+            Team: @foreach (var item in Model.PP)
+            {
+                @item.TeamName.ToString();
+            }
+            <br />
+            Age: @foreach (var item in Model.PP)
+            {
+                @item.Age.ToString();
+            }
+
+        </p>
+
+
+                
+            
+        
     </div>
 </div>
 
