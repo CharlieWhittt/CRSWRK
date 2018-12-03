@@ -28,9 +28,7 @@ namespace bootstrap.Models
     {
         public string PlayerID { get; set; }
 
-        public List<BasicInfoResult> PP { get; set; }
-
-        public List<BattingCalculationsResult> BC { get; set; }
-        public List<PitchingCalculationsResult> PC { get; set; }
+        public List<BatterPlayerPageResult> BP { get; set; }
+        public List<PitcherPlayerPageResult> PP { get; set; }
     }
 }

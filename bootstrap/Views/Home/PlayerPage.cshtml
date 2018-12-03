@@ -8,37 +8,154 @@
     <h2>Baseball stats</h2>
     <div>
        
-            
+        <br />
                 <h1> @foreach (var item in Model.PP)
                 {
-                    @item.Name.ToString();
+                    @item.Name.ToString()
                 } 
         </h1>
         <h1>
             @foreach (var item in Model.PP)
             {
-                @item.PositionAbbr.ToString();
+                @item.PositionAbbr.ToString()
             }
         </h1>
 
         <h4>(@foreach (var item in Model.PP)
             {
-                @item.PositionName.ToString();
+                @item.PositionName.ToString()
             })</h4>
         <p>
             <br />
             Team: @foreach (var item in Model.PP)
             {
-                @item.TeamName.ToString();
+                @item.TeamName.ToString()
             }
             <br />
             Age: @foreach (var item in Model.PP)
             {
-                @item.Age.ToString();
+                @item.Age.ToString()
             }
-
+            <br />
+            <br />
         </p>
+        
+            @foreach (var item in Model.PP)
+            {
+                if (item.PositionAbbr == "P")
+                {
+                    <h2> Pitching Stats </h2>
+                    
+                    <table cellpadding="20" cellspacing="10">
+                        <tr>
 
+                            <th>
+                                G
+                            </th>
+
+                            <th>
+                                W
+                            </th>
+
+                            <th>
+                                L
+                            </th>
+
+                            <th>
+                                SV
+                            </th>
+
+                            <th>
+                                BS
+                            </th>
+
+                            <th>
+                                ERA
+                            </th>
+
+                            <th>
+                                WHIP
+                            </th>
+
+                            <th>
+                                AVG
+                            </th>
+
+                            <th>
+                                K/9
+                            </th>
+
+                            <th>
+                                BB/9
+                            </th>
+
+                            <th>
+                                K/BB
+                            </th>
+
+                            <th>
+                                K%
+                            </th>
+
+                            <th>
+                                BB%
+                            </th>
+                        </tr>
+                        
+
+                            <tr>
+                                <td>
+                                    @item.G.ToString()
+                                </td>
+                                <td>
+                                    @item.W.ToString()
+                                </td>
+                                <td>
+                                    @item.L.ToString()
+                                </td>
+                                <td>
+                                    @item.SV.ToString()
+                                </td>
+                                <td>
+                                    @item.BS.ToString()
+                                </td>
+                                <td>
+                                    @item.ERA.ToString()
+                                </td>
+                                <td>
+                                    @item.WHIP.ToString()
+                                </td>
+                                <td>
+                                    @item.AVG.ToString()
+                                </td>
+                                <td>
+                                    @item.K_9.ToString()
+                                </td>
+                                <td>
+                                    @item.BB_9.ToString()
+                                </td>
+                                <td>
+                                    @item.K_BB.ToString()
+                                </td>
+                                <td>
+                                    @item.K_.ToString()
+                                </td>
+                                <td>
+                                    @item.BB_.ToString()
+                                </td>
+
+
+
+
+                            </tr>
+                        
+                        
+                    </table>
+
+
+                                }
+                            }
+        
 
                 
             

@@ -83,12 +83,16 @@ namespace bootstrap.Controllers
 
             PlayerPageViewModel Model = new PlayerPageViewModel();
 
-            Model.PP = new List<BasicInfoResult>();
+            Model.BP = new List<BatterPlayerPageResult>();
+           
+            Model.BP = Db.BatterPlayerPage(PlayerID).ToList();
 
+            Model.PP = new List<PitcherPlayerPageResult>();
 
-            Model.PP = Db.BasicInfo(PlayerID).ToList();
+            Model.PP = Db.PitcherPlayerPage(PlayerID).ToList();
 
             return View(Model);
         }
+
     }
 }

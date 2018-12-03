@@ -90,25 +90,25 @@ namespace bootstrap.Models
 			return ((ISingleResult<PlayerSearchResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.BattingCalculations")]
-		public ISingleResult<BattingCalculationsResult> BattingCalculations([global::System.Data.Linq.Mapping.ParameterAttribute(Name="PlayerID", DbType="Int")] System.Nullable<int> playerID)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), playerID);
-			return ((ISingleResult<BattingCalculationsResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.PitchingCalculations")]
-		public ISingleResult<PitchingCalculationsResult> PitchingCalculations([global::System.Data.Linq.Mapping.ParameterAttribute(Name="PlayerID", DbType="Int")] System.Nullable<int> playerID)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), playerID);
-			return ((ISingleResult<PitchingCalculationsResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.BasicInfo")]
 		public ISingleResult<BasicInfoResult> BasicInfo([global::System.Data.Linq.Mapping.ParameterAttribute(Name="PlayerID", DbType="Int")] System.Nullable<int> playerID)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), playerID);
 			return ((ISingleResult<BasicInfoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.BatterPlayerPage")]
+		public ISingleResult<BatterPlayerPageResult> BatterPlayerPage([global::System.Data.Linq.Mapping.ParameterAttribute(Name="PlayerID", DbType="Int")] System.Nullable<int> playerID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), playerID);
+			return ((ISingleResult<BatterPlayerPageResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.PitcherPlayerPage")]
+		public ISingleResult<PitcherPlayerPageResult> PitcherPlayerPage([global::System.Data.Linq.Mapping.ParameterAttribute(Name="PlayerID", DbType="Int")] System.Nullable<int> playerID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), playerID);
+			return ((ISingleResult<PitcherPlayerPageResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -396,10 +396,116 @@ namespace bootstrap.Models
 		}
 	}
 	
-	public partial class BattingCalculationsResult
+	public partial class BasicInfoResult
 	{
 		
 		private string _Name;
+		
+		private System.Nullable<int> _Age;
+		
+		private string _TeamName;
+		
+		private string _PositionAbbr;
+		
+		private string _PositionName;
+		
+		public BasicInfoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(256)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Age", DbType="Int")]
+		public System.Nullable<int> Age
+		{
+			get
+			{
+				return this._Age;
+			}
+			set
+			{
+				if ((this._Age != value))
+				{
+					this._Age = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TeamName", DbType="NVarChar(256)")]
+		public string TeamName
+		{
+			get
+			{
+				return this._TeamName;
+			}
+			set
+			{
+				if ((this._TeamName != value))
+				{
+					this._TeamName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionAbbr", DbType="NVarChar(2)")]
+		public string PositionAbbr
+		{
+			get
+			{
+				return this._PositionAbbr;
+			}
+			set
+			{
+				if ((this._PositionAbbr != value))
+				{
+					this._PositionAbbr = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionName", DbType="NVarChar(20)")]
+		public string PositionName
+		{
+			get
+			{
+				return this._PositionName;
+			}
+			set
+			{
+				if ((this._PositionName != value))
+				{
+					this._PositionName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class BatterPlayerPageResult
+	{
+		
+		private string _Name;
+		
+		private System.Nullable<int> _Age;
+		
+		private string _TeamName;
+		
+		private string _PositionAbbr;
+		
+		private string _PositionName;
 		
 		private System.Nullable<int> _G;
 		
@@ -427,7 +533,7 @@ namespace bootstrap.Models
 		
 		private System.Nullable<decimal> _BB_;
 		
-		public BattingCalculationsResult()
+		public BatterPlayerPageResult()
 		{
 		}
 		
@@ -443,6 +549,70 @@ namespace bootstrap.Models
 				if ((this._Name != value))
 				{
 					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Age", DbType="Int")]
+		public System.Nullable<int> Age
+		{
+			get
+			{
+				return this._Age;
+			}
+			set
+			{
+				if ((this._Age != value))
+				{
+					this._Age = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TeamName", DbType="NVarChar(256)")]
+		public string TeamName
+		{
+			get
+			{
+				return this._TeamName;
+			}
+			set
+			{
+				if ((this._TeamName != value))
+				{
+					this._TeamName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionAbbr", DbType="NVarChar(2)")]
+		public string PositionAbbr
+		{
+			get
+			{
+				return this._PositionAbbr;
+			}
+			set
+			{
+				if ((this._PositionAbbr != value))
+				{
+					this._PositionAbbr = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionName", DbType="NVarChar(20)")]
+		public string PositionName
+		{
+			get
+			{
+				return this._PositionName;
+			}
+			set
+			{
+				if ((this._PositionName != value))
+				{
+					this._PositionName = value;
 				}
 			}
 		}
@@ -656,10 +826,18 @@ namespace bootstrap.Models
 		}
 	}
 	
-	public partial class PitchingCalculationsResult
+	public partial class PitcherPlayerPageResult
 	{
 		
 		private string _Name;
+		
+		private System.Nullable<int> _Age;
+		
+		private string _TeamName;
+		
+		private string _PositionAbbr;
+		
+		private string _PositionName;
 		
 		private System.Nullable<int> _G;
 		
@@ -689,7 +867,7 @@ namespace bootstrap.Models
 		
 		private System.Nullable<decimal> _BB_;
 		
-		public PitchingCalculationsResult()
+		public PitcherPlayerPageResult()
 		{
 		}
 		
@@ -705,6 +883,70 @@ namespace bootstrap.Models
 				if ((this._Name != value))
 				{
 					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Age", DbType="Int")]
+		public System.Nullable<int> Age
+		{
+			get
+			{
+				return this._Age;
+			}
+			set
+			{
+				if ((this._Age != value))
+				{
+					this._Age = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TeamName", DbType="NVarChar(256)")]
+		public string TeamName
+		{
+			get
+			{
+				return this._TeamName;
+			}
+			set
+			{
+				if ((this._TeamName != value))
+				{
+					this._TeamName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionAbbr", DbType="NVarChar(2)")]
+		public string PositionAbbr
+		{
+			get
+			{
+				return this._PositionAbbr;
+			}
+			set
+			{
+				if ((this._PositionAbbr != value))
+				{
+					this._PositionAbbr = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionName", DbType="NVarChar(20)")]
+		public string PositionName
+		{
+			get
+			{
+				return this._PositionName;
+			}
+			set
+			{
+				if ((this._PositionName != value))
+				{
+					this._PositionName = value;
 				}
 			}
 		}
@@ -929,104 +1171,6 @@ namespace bootstrap.Models
 				if ((this._BB_ != value))
 				{
 					this._BB_ = value;
-				}
-			}
-		}
-	}
-	
-	public partial class BasicInfoResult
-	{
-		
-		private string _Name;
-		
-		private System.Nullable<int> _Age;
-		
-		private string _TeamName;
-		
-		private string _PositionAbbr;
-		
-		private string _PositionName;
-		
-		public BasicInfoResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(256)")]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this._Name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Age", DbType="Int")]
-		public System.Nullable<int> Age
-		{
-			get
-			{
-				return this._Age;
-			}
-			set
-			{
-				if ((this._Age != value))
-				{
-					this._Age = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TeamName", DbType="NVarChar(256)")]
-		public string TeamName
-		{
-			get
-			{
-				return this._TeamName;
-			}
-			set
-			{
-				if ((this._TeamName != value))
-				{
-					this._TeamName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionAbbr", DbType="NVarChar(2)")]
-		public string PositionAbbr
-		{
-			get
-			{
-				return this._PositionAbbr;
-			}
-			set
-			{
-				if ((this._PositionAbbr != value))
-				{
-					this._PositionAbbr = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionName", DbType="NVarChar(20)")]
-		public string PositionName
-		{
-			get
-			{
-				return this._PositionName;
-			}
-			set
-			{
-				if ((this._PositionName != value))
-				{
-					this._PositionName = value;
 				}
 			}
 		}

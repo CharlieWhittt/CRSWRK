@@ -33,10 +33,24 @@
       <Column Name="PositionName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.BattingCalculations" Method="BattingCalculations">
+  <Function Name="dbo.BasicInfo" Method="BasicInfo">
     <Parameter Name="PlayerID" Parameter="playerID" Type="System.Int32" DbType="Int" />
-    <ElementType Name="BattingCalculationsResult">
+    <ElementType Name="BasicInfoResult">
       <Column Name="Name" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TeamName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="PositionAbbr" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="PositionName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.BatterPlayerPage" Method="BatterPlayerPage">
+    <Parameter Name="PlayerID" Parameter="playerID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="BatterPlayerPageResult">
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TeamName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="PositionAbbr" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="PositionName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="G" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AB" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="H" Type="System.Double" DbType="Float" CanBeNull="true" />
@@ -52,10 +66,14 @@
       <Column Name="[BB%]" Member="BB_" Type="System.Decimal" DbType="Decimal(10,1)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.PitchingCalculations" Method="PitchingCalculations">
+  <Function Name="dbo.PitcherPlayerPage" Method="PitcherPlayerPage">
     <Parameter Name="PlayerID" Parameter="playerID" Type="System.Int32" DbType="Int" />
-    <ElementType Name="PitchingCalculationsResult">
+    <ElementType Name="PitcherPlayerPageResult">
       <Column Name="Name" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TeamName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="PositionAbbr" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="PositionName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="G" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="IP" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="W" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -70,16 +88,6 @@
       <Column Name="[K/BB]" Member="K_BB" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
       <Column Name="[K%]" Member="K_" Type="System.Decimal" DbType="Decimal(10,1)" CanBeNull="true" />
       <Column Name="[BB%]" Member="BB_" Type="System.Decimal" DbType="Decimal(10,1)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.BasicInfo" Method="BasicInfo">
-    <Parameter Name="PlayerID" Parameter="playerID" Type="System.Int32" DbType="Int" />
-    <ElementType Name="BasicInfoResult">
-      <Column Name="Name" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
-      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TeamName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
-      <Column Name="PositionAbbr" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
-      <Column Name="PositionName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>
