@@ -31,4 +31,8 @@ namespace bootstrap.Models
         public List<BatterPlayerPageResult> BP { get; set; }
         public List<PitcherPlayerPageResult> PP { get; set; }
     }
+    public class LeagueLeadersViewModel
+    {
+        public List<LeagueLeadersResult> LL { get; set; }
+    }
 }

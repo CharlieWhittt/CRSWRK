@@ -279,6 +279,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\TeamFinder.cshtml" />
     <Content Include="Views\Home\PlayerPage.cshtml" />
+    <Content Include="Views\Home\LeagueLeaders.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

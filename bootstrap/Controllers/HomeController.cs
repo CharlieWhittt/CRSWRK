@@ -13,15 +13,9 @@ namespace bootstrap.Controllers
     {
         public ActionResult Index()
         {
-            DingerDataContext Db = new DingerDataContext();
+            
 
-            IndexModel Model = new IndexModel();
-
-            Model.PT = new List<getPlayersWithTeamResult>();
-
-            Model.PT = Db.getPlayersWithTeam().ToList();
-
-            return View(Model);
+            return null;
         }
 
         public ActionResult TeamFinder()
@@ -94,5 +88,17 @@ namespace bootstrap.Controllers
             return View(Model);
         }
 
+        public ActionResult LeagueLeaders()
+        {
+            DingerDataContext Db = new DingerDataContext();
+
+            LeagueLeadersViewModel Model = new LeagueLeadersViewModel();
+
+            Model.LL = new List<LeagueLeadersResult>();
+
+            Model.LL = Db.LeagueLeaders().ToList();
+
+            return View(Model);
+        }
     }
 }

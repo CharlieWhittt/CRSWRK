@@ -110,6 +110,13 @@ namespace bootstrap.Models
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), playerID);
 			return ((ISingleResult<PitcherPlayerPageResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LeagueLeaders")]
+		public ISingleResult<LeagueLeadersResult> LeagueLeaders()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<LeagueLeadersResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class getPlayersWithTeamResult
@@ -1171,6 +1178,50 @@ namespace bootstrap.Models
 				if ((this._BB_ != value))
 				{
 					this._BB_ = value;
+				}
+			}
+		}
+	}
+	
+	public partial class LeagueLeadersResult
+	{
+		
+		private string _Name;
+		
+		private System.Nullable<decimal> _AVG;
+		
+		public LeagueLeadersResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(256)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AVG", DbType="Decimal(10,3)")]
+		public System.Nullable<decimal> AVG
+		{
+			get
+			{
+				return this._AVG;
+			}
+			set
+			{
+				if ((this._AVG != value))
+				{
+					this._AVG = value;
 				}
 			}
 		}

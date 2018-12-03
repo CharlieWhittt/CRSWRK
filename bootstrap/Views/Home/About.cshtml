@@ -1,6 +1,6 @@
 ﻿@model bootstrap.Models.PlayerSeachViewModel
 @{
-    ViewBag.Title = "HomePage";
+    ViewBag.Title = "Player Search";
 }
 
 @using (Html.BeginForm("About", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -23,30 +23,41 @@
     <div class="jumbotron crew-jumbotron-container">
         <h2>Baseball stats</h2>
         <div>
-            <table>
+            <table cellpadding="20" cellspacing="10">
                 <tr>
-
                     <th>
                         Name
                     </th>
-
+                    <th>
+                        Age
+                    </th>
+                    <th>
+                        Position
+                    </th>
                     <th>
                         Team
                     </th>
+
+
                 </tr>
                 @{
                     foreach (var item in Model.SC)
                     {
-                        <tr>
-                            <td>
-                                @Html.ActionLink(item.Name, "PlayerPage", "Home", new { PlayerID = item.PlayerID }, null)
-                            </td>
+                <tr>
+                    <td>
+                        @Html.ActionLink(item.Name, "PlayerPage", "Home", new { PlayerID = item.PlayerID }, null)
+                    </td>
+                    <td>
+                        @item.Age
+                    </td>
+                    <td>
+                        @item.PositionAbbr
+                    </td>
+                    <td>
+                        @Html.ActionLink(item.TeamName, "TeamInfo", "Manage", new { id = item.TeamID }, null)
+                    </td>
 
-                            <td>
-                                @Html.ActionLink(item.TeamName, "TeamInfo", "Manage", new { id = item.TeamID }, null)
-                                @*@item.TeamName*@
-                            </td>
-                        </tr>
+                </tr>
                     }
                 }
             </table>

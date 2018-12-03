@@ -90,4 +90,10 @@
       <Column Name="[BB%]" Member="BB_" Type="System.Decimal" DbType="Decimal(10,1)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.LeagueLeaders" Method="LeagueLeaders">
+    <ElementType Name="LeagueLeadersResult">
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="AVG" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

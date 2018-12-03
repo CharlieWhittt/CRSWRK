@@ -1,0 +1,45 @@
+﻿@model bootstrap.Models.LeagueLeadersViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron crew-jumbotron-container">
+
+
+    <h1>League Leaders</h1>
+    <div>
+    <br />
+    <h2> Homeruns</h2>
+
+    @foreach (var item in Model.LL)
+    {
+        @*<table cellpadding="20" cellspacing="10">
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Team
+                </th>
+                <th>
+                    HR
+                </th>
+                
+                </tr>
+            <tr>
+                <td>
+                    @item.Name.ToString()
+                </td>
+                <td>
+                    @item.Team.ToString()
+                </td>
+                <td>
+                    @item.HR.ToString()
+                </td>
+                </tr>
+</table>*@
+    }
+</div>
+
+

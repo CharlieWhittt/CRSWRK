@@ -7,189 +7,235 @@
 <div class="jumbotron crew-jumbotron-container">
     <h2>Baseball stats</h2>
     <div>
-       
+
         <br />
-                <h1> @foreach (var item in Model.PP)
-                {
-                    @item.Name.ToString()
-                } 
+        <h1>
+            @foreach (var item in Model.BP)
+            {
+                @item.Name.ToString()
+            }
         </h1>
         <h1>
-            @foreach (var item in Model.PP)
+            @foreach (var item in Model.BP)
             {
                 @item.PositionAbbr.ToString()
             }
         </h1>
-
-        <h4>(@foreach (var item in Model.PP)
+        <h4>
+            (@foreach (var item in Model.BP)
             {
                 @item.PositionName.ToString()
-            })</h4>
+            })
+        </h4>
         <p>
             <br />
-            Team: @foreach (var item in Model.PP)
+            Team: @foreach (var item in Model.BP)
             {
                 @item.TeamName.ToString()
             }
             <br />
-            Age: @foreach (var item in Model.PP)
+            Age: @foreach (var item in Model.BP)
             {
                 @item.Age.ToString()
             }
             <br />
             <br />
         </p>
-        
-            @foreach (var item in Model.PP)
+
+        @foreach (var item in Model.BP)
+        {
+            if (item.PositionAbbr != "P")
             {
-                if (item.PositionAbbr == "P")
+                <h2> Batting Stats </h2>
+
+                <table cellpadding="20" cellspacing="10">
+                    <tr>
+                        <th>
+                            G
+                        </th>
+                        <th>
+                            AB
+                        </th>
+                        <th>
+                            AVG
+                        </th>
+                        <th>
+                            HR
+                        </th>
+                        <th>
+                            RBI
+                        </th>
+                        <th>
+                            OBP
+                        </th>
+                        <th>
+                            SLG
+                        </th>
+                        <th>
+                            OPS
+                        </th>
+                        <th>
+                            ISO
+                        </th>
+                        <th>
+                            BABIP
+                        </th>
+                        <th>
+                            K%
+                        </th>
+                        <th>
+                            BB%
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @item.G.ToString()
+                        </td>
+                        <td>
+                            @item.AB.ToString()
+                        </td>
+                        <td>
+                            @item.AVG.ToString()
+                        </td>
+                        <td>
+                            @item.HR.ToString()
+                        </td>
+                        <td>
+                            @item.RBI.ToString()
+                        </td>
+                        <td>
+                            @item.OBP.ToString()
+                        </td>
+                        <td>
+                            @item.SLG.ToString()
+                        </td>
+                        <td>
+                            @item.OPS.ToString()
+                        </td>
+                        <td>
+                            @item.ISO.ToString()
+                        </td>
+                        <td>
+                            @item.BABIP.ToString()
+                        </td>
+                        <td>
+                            @item.K_.ToString()
+                        </td>
+                        <td>
+                            @item.BB_.ToString()
+                        </td>
+                    </tr>
+
+
+                </table>
+
+
+
+
+            }
+        }
+        @foreach (var item in Model.PP)
+        {
+            if (item.PositionAbbr == "P")
+            {
                 {
                     <h2> Pitching Stats </h2>
-                    
+
                     <table cellpadding="20" cellspacing="10">
                         <tr>
-
                             <th>
                                 G
                             </th>
-
                             <th>
                                 W
                             </th>
-
                             <th>
                                 L
                             </th>
-
                             <th>
                                 SV
                             </th>
-
                             <th>
                                 BS
                             </th>
-
                             <th>
                                 ERA
                             </th>
-
                             <th>
                                 WHIP
                             </th>
-
                             <th>
                                 AVG
                             </th>
-
                             <th>
                                 K/9
                             </th>
-
                             <th>
                                 BB/9
                             </th>
-
                             <th>
                                 K/BB
                             </th>
-
                             <th>
                                 K%
                             </th>
-
                             <th>
                                 BB%
                             </th>
                         </tr>
-                        
 
-                            <tr>
-                                <td>
-                                    @item.G.ToString()
-                                </td>
-                                <td>
-                                    @item.W.ToString()
-                                </td>
-                                <td>
-                                    @item.L.ToString()
-                                </td>
-                                <td>
-                                    @item.SV.ToString()
-                                </td>
-                                <td>
-                                    @item.BS.ToString()
-                                </td>
-                                <td>
-                                    @item.ERA.ToString()
-                                </td>
-                                <td>
-                                    @item.WHIP.ToString()
-                                </td>
-                                <td>
-                                    @item.AVG.ToString()
-                                </td>
-                                <td>
-                                    @item.K_9.ToString()
-                                </td>
-                                <td>
-                                    @item.BB_9.ToString()
-                                </td>
-                                <td>
-                                    @item.K_BB.ToString()
-                                </td>
-                                <td>
-                                    @item.K_.ToString()
-                                </td>
-                                <td>
-                                    @item.BB_.ToString()
-                                </td>
-
-
+                        <tr>
+                            <td>
+                                @item.G.ToString()
+                            </td>
+                            <td>
+                                @item.W.ToString()
+                            </td>
+                            <td>
+                                @item.L.ToString()
+                            </td>
+                            <td>
+                                @item.SV.ToString()
+                            </td>
+                            <td>
+                                @item.BS.ToString()
+                            </td>
+                            <td>
+                                @item.ERA.ToString()
+                            </td>
+                            <td>
+                                @item.WHIP.ToString()
+                            </td>
+                            <td>
+                                @item.AVG.ToString()
+                            </td>
+                            <td>
+                                @item.K_9.ToString()
+                            </td>
+                            <td>
+                                @item.BB_9.ToString()
+                            </td>
+                            <td>
+                                @item.K_BB.ToString()
+                            </td>
+                            <td>
+                                @item.K_.ToString()
+                            </td>
+                            <td>
+                                @item.BB_.ToString()
+                            </td>
+                        </tr>
 
 
-                            </tr>
-                        
-                        
                     </table>
+                }
+            }
+        }
 
 
-                                }
-                            }
-        
 
-                
-            
-        
     </div>
 </div>
 
 
-<!-- Bootstrap remnents -->
-
-@*<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>*@
-
-@*<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>*@
